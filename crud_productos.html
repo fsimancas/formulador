@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Productos - Formulación Cárnica</title>
+    <link rel="stylesheet" href="productos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1>Formulación Cárnica</h1>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="crud_ingredientes.html"><i class="fas fa-drumstick-bite"></i> Ingredientes</a></li>
+                    <li><a href="crud_productos.html"><i class="fas fa-flask"></i> Productos</a></li>
+                    <li><a href="formulador.html"><i class="fas fa-chart-line"></i> Formulador</a></li>
+                    <li><a href="reportes.html"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                </ul>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="crud-productos">
+            <h2>Gestión de Productos</h2>
+
+            <button class="add-button" id="openModal">Agregar Producto</button>
+
+            <table id="productosTable">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO DEL PRODUCTO</th>
+                        <th>NOMBRE DEL PRODUCTO</th>
+                        <th>COMPOSICIÓN</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se rellenarán los datos dinámicamente -->
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button id="prevPage">Anterior</button>
+                <span id="pageDisplay">1</span>
+                <button id="nextPage">Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar producto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar Producto</h2>
+            <form id="productForm">
+                <label for="codigoProducto">Código del Producto:</label>
+                <input type="text" id="codigoProducto" name="codigoProducto" required>
+
+                <label for="nombreProducto">Nombre del Producto:</label>
+                <input type="text" id="nombreProducto" name="nombreProducto" required>
+
+                <label for="composicionProducto">Composición:</label>
+                <textarea id="composicionProducto" name="composicionProducto" required></textarea>
+
+                <label for="ingredienteBuscar">Buscar Ingrediente (Código o Nombre):</label>
+                <input type="text" id="ingredienteBuscar" name="ingredienteBuscar" placeholder="Buscar ingrediente..." autocomplete="off">
+                <button type="button" id="buscarIngrediente">Buscar</button>
+
+                <h3>Ingredientes Seleccionados:</h3>
+                <ul id="ingredientesList">
+                    <!-- Lista de ingredientes seleccionados -->
+                </ul>
+
+                <button type="submit">Agregar Producto</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="productos.js"></script>
+</body>
+</html>

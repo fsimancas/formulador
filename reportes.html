@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Formulación Cárnica</title>
+    <link rel="stylesheet" href="reportes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1>Formulación Cárnica</h1>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="crud_ingredientes.html"><i class="fas fa-drumstick-bite"></i> Ingredientes</a></li>
+                    <li><a href="crud_productos.html"><i class="fas fa-flask"></i> Productos</a></li>
+                    <li><a href="formulador.html"><i class="fas fa-chart-line"></i> Formulador</a></li>
+                    <li><a href="reportes.html"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reportes">
+            <h2>Reportes de Productos y Ingredientes</h2>
+
+            <!-- Filtros para reportes -->
+            <div class="filtros">
+                <label for="fechaInicio">Fecha Inicio:</label>
+                <input type="date" id="fechaInicio">
+                
+                <label for="fechaFin">Fecha Fin:</label>
+                <input type="date" id="fechaFin">
+
+                <label for="producto">Producto:</label>
+                <select id="producto">
+                    <option value="todos">Todos</option>
+                    <option value="001">Chorizo Costeño</option>
+                    <option value="002">Salchicha Patrón Harina de Maíz 2</option>
+                </select>
+
+                <label for="ingrediente">Ingrediente:</label>
+                <select id="ingrediente">
+                    <option value="todos">Todos</option>
+                    <option value="000CAB">Prep. Sabor Cabano</option>
+                    <option value="000CHA">Prep. Sabor Chorizo Ant.</option>
+                    <option value="000CER">Prep. Sabor Cervecero</option>
+                </select>
+
+                <button type="button" id="generarReporte">Generar Reporte</button>
+            </div>
+
+            <!-- Gráficos de reportes -->
+            <div class="graficos-reportes">
+                <div class="grafico">
+                    <h3>Evolución de Costos de Ingredientes</h3>
+                    <canvas id="costosChart"></canvas>
+                </div>
+
+                <div class="grafico">
+                    <h3>Comparación de Composición</h3>
+                    <canvas id="composicionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tabla de Reportes Resumidos -->
+            <div class="tabla-reportes">
+                <h3>Resumen de Productos y Costos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Ingrediente</th>
+                            <th>Costo Total</th>
+                            <th>% Proteína</th>
+                            <th>% Grasa</th>
+                            <th>% Humedad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumenProductos">
+                        <!-- Se agregarán filas dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Observaciones -->
+            <h3>Observaciones Generales</h3>
+            <textarea id="observacionesReporte" rows="4" cols="50"></textarea>
+        </section>
+    </main>
+
+    <script src="reportes.js"></script>
+</body>
+</html>

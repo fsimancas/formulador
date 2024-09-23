@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Ingredientes - Formulación Cárnica</title>
+    <link rel="stylesheet" href="ingredientes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1>Formulación Cárnica</h1>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="crud_ingredientes.html"><i class="fas fa-drumstick-bite"></i> Ingredientes</a></li>
+                    <li><a href="crud_productos.html"><i class="fas fa-flask"></i> Productos</a></li>
+                    <li><a href="formulador.html"><i class="fas fa-chart-line"></i> Formulador</a></li>
+                    <li><a href="reportes.html"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                </ul>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="crud-ingredientes">
+            <h2>Gestión de Ingredientes</h2>
+
+            <button class="add-button" id="openModal">Agregar Ingrediente</button>
+
+            <table id="ingredientesTable">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>NOMBRE</th>
+                        <th>T</th>
+                        <th>$</th>
+                        <th>Gra</th>
+                        <th>Pro C</th>
+                        <th>PRO T</th>
+                        <th>Hum</th>
+                        <th>Sal</th>
+                        <th>Fos</th>
+                        <th>Eri</th>
+                        <th>No2</th>
+                        <th>Alm</th>
+                        <th>Cra</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se rellenarán los datos dinámicamente -->
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button id="prevPage">Anterior</button>
+                <span id="pageDisplay">1</span>
+                <button id="nextPage">Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar ingrediente -->
+    <div id="ingredientModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar Ingrediente</h2>
+            <form id="ingredientForm">
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" required>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="precio">Precio:</label>
+                <input type="text" id="precio" name="precio" required>
+
+                <label for="proT">Proteína Total (PRO T):</label>
+                <input type="text" id="proT" name="proT" required>
+
+                <label for="hum">Humedad (Hum):</label>
+                <input type="text" id="hum" name="hum" required>
+
+                <label for="sal">Sal:</label>
+                <input type="text" id="sal" name="sal" required>
+
+                <label for="fos">Fosfato (Fos):</label>
+                <input type="text" id="fos" name="fos">
+
+                <label for="alm">Almidón (Alm):</label>
+                <input type="text" id="alm" name="alm">
+
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para editar ingrediente -->
+    <div id="editIngredientModal" class="modal">
+        <div class="modal-content">
+            <span class="close-edit">&times;</span>
+            <h2>Editar Ingrediente</h2>
+            <form id="editIngredientForm">
+                <label for="editCodigo">Código:</label>
+                <input type="text" id="editCodigo" name="codigo" required>
+
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" name="nombre" required>
+
+                <label for="editPrecio">Precio:</label>
+                <input type="text" id="editPrecio" name="precio" required>
+
+                <label for="editProT">Proteína Total (PRO T):</label>
+                <input type="text" id="editProT" name="proT" required>
+
+                <label for="editHum">Humedad (Hum):</label>
+                <input type="text" id="editHum" name="hum" required>
+
+                <label for="editSal">Sal:</label>
+                <input type="text" id="editSal" name="sal" required>
+
+                <label for="editFos">Fosfato (Fos):</label>
+                <input type="text" id="editFos" name="fos">
+
+                <label for="editAlm">Almidón (Alm):</label>
+                <input type="text" id="editAlm" name="alm">
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="ingredientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulador de Productos Cárnicos</title>
+    <link rel="stylesheet" href="formulador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1>Formulación Cárnica</h1>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="crud_ingredientes.html"><i class="fas fa-drumstick-bite"></i> Ingredientes</a></li>
+                    <li><a href="crud_productos.html"><i class="fas fa-flask"></i> Productos</a></li>
+                    <li><a href="formulador.html"><i class="fas fa-chart-line"></i> Formulador</a></li>
+                    <li><a href="reportes.html"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="formulador">
+            <h2>Formulador de Productos</h2>
+
+            <!-- Buscador de productos -->
+            <label for="productoBuscar">Buscar Producto (Código o Nombre):</label>
+            <input type="text" id="productoBuscar" name="productoBuscar" placeholder="Buscar producto...">
+            <button type="button" id="buscarProducto">Buscar</button>
+
+            <!-- Tabla principal -->
+            <div class="tabla-principal">
+                <table id="ingredientesTable">
+                    <thead>
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th>Kg</th>
+                            <th>%</th>
+                            <th>Kg/Bache</th>
+                            <th>$ / Kg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se agregarán los ingredientes dinámicamente -->
+                    </tbody>
+                </table>
+
+                <!-- Tabla de parámetros de los ingredientes -->
+                <table id="parametrosIngredientes">
+                    <thead>
+                        <tr>
+                            <th>% GRA</th>
+                            <th>% PRO</th>
+                            <th>% HUM</th>
+                            <th>% SAL</th>
+                            <th>% PO4</th>
+                            <th>% ASC</th>
+                            <th>% NO2</th>
+                            <th>% ALM</th>
+                            <th>RET</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se agregarán los parámetros de los ingredientes -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Campos adicionales abajo de la tabla de ingredientes -->
+            <div class="tabla-adicional">
+                <table>
+                    <tr>
+                        <td>Total Crudo:</td>
+                        <td><input type="text" id="totalCrudo"></td>
+                    </tr>
+                    <tr>
+                        <td>% Merma:</td>
+                        <td><input type="number" id="merma"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Merma:</td>
+                        <td><input type="text" id="totalMerma"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Producto Terminado:</td>
+                        <td><input type="text" id="productoTerminado"></td>
+                    </tr>
+                    <tr>
+                        <td>Kg/Bache Total:</td>
+                        <td><input type="text" id="bacheTotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Kg/Bache Total Terminado:</td>
+                        <td><input type="text" id="bacheTotalTerminado"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Tabla Índices y Costos -->
+            <div class="tablas-secundarias">
+                <!-- Tabla vertical Índices -->
+                <table id="indicesTable" class="vertical-table">
+                    <thead>
+                        <tr>
+                            <th>Índices</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hum/Prot:</td>
+                            <td><input type="text" id="humProt"></td>
+                        </tr>
+                        <tr>
+                            <td>Gra/Prot:</td>
+                            <td><input type="text" id="graProt"></td>
+                        </tr>
+                        <tr>
+                            <td>Sal/Hdad:</td>
+                            <td><input type="text" id="salHdad"></td>
+                        </tr>
+                        <tr>
+                            <td>Bal. H2O:</td>
+                            <td><input type="text" id="balH2O"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Tabla Costos -->
+                <table id="costosTable">
+                    <thead>
+                        <tr>
+                            <th>Ingred/kg</th>
+                            <th>Tripa/kg</th>
+                            <th>Ud vta kg</th>
+                            <th>Emp. ud vta</th>
+                            <th>Costo Fijo x Kg</th>
+                            <th>Humo x Kg</th>
+                            <th>Otros</th>
+                            <th>M/P x ud vta</th>
+                            <th>Precio Venta</th>
+                            <th>% Contribución</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="ingredKg"></td>
+                            <td><input type="text" id="tripaKg"></td>
+                            <td><input type="text" id="udVtaKg"></td>
+                            <td><input type="text" id="empUdVta"></td>
+                            <td><input type="text" id="costoFijoKg"></td>
+                            <td><input type="text" id="humoKg"></td>
+                            <td><input type="text" id="otros"></td>
+                            <td><input type="text" id="mpUdVta"></td>
+                            <td><input type="text" id="precioVenta"></td>
+                            <td><input type="text" id="contribucion"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Área de observaciones -->
+            <h3>Observaciones</h3>
+            <textarea id="observaciones" rows="4" cols="50"></textarea>
+        </section>
+    </main>
+
+    <script src="formulador.js"></script>
+</body>
+</html>

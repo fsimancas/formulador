@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Formulación Cárnica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <h1>Formulación Cárnica</h1>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="crud_ingredientes.html"><i class="fas fa-drumstick-bite"></i> Ingredientes</a></li>
+                    <li><a href="crud_productos.html"><i class="fas fa-flask"></i> Productos</a></li>
+                    <li><a href="formulador.html"><i class="fas fa-chart-line"></i> Formulador</a></li>
+                    <li><a href="reportes.html"><i class="fas fa-chart-line"></i> Reportes</a></li>
+                </ul>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard-kpis">
+            <div class="kpi-card">
+                <h2>Costo Promedio de Formulación</h2>
+                <p>$12,000</p>
+            </div>
+            <div class="kpi-card">
+                <h2>Productos Activos</h2>
+                <p>18</p>
+            </div>
+            <div class="kpi-card">
+                <h2>Márgenes de Rentabilidad</h2>
+                <p>20%</p>
+            </div>
+            <div class="kpi-card">
+                <h2>Alertas</h2>
+                <p>2 ingredientes próximos a caducar</p>
+            </div>
+        </section>
+
+        <section class="dashboard-charts">
+            <div class="chart">
+                <h3>Evolución del Costo de Ingredientes</h3>
+                <canvas id="costChart"></canvas>
+            </div>
+            <div class="chart">
+                <h3>Comparaciones de Costos entre Productos</h3>
+                <canvas id="productCostChart"></canvas>
+            </div>
+            <div class="chart">
+                <h3>Proporciones de Ingredientes</h3>
+                <canvas id="ingredientPieChart"></canvas>
+            </div>
+        </section>
+
+        <section class="dashboard-tables">
+            <h3>Últimas Formulaciones Guardadas</h3>
+            <table>
+                <tr>
+                    <th>Producto</th>
+                    <th>Fecha</th>
+                    <th>Costo</th>
+                </tr>
+                <tr>
+                    <td>Salchicha de Res</td>
+                    <td>21/09/2024</td>
+                    <td>$5000</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

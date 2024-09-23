@@ -1,0 +1,194 @@
+/* Similar al anterior, más los estilos del nuevo modal */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004b8d;
+    padding: 15px;
+    color: white;
+}
+
+.navbar-left h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.navbar-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.user-profile i {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.crud-ingredientes {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.crud-ingredientes h2 {
+    color: #004b8d;
+    margin-bottom: 20px;
+}
+
+.add-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #004b8d;
+    color: white;
+}
+
+.edit-button, .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #ffc107;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px;
+    margin: 0 10px;
+    border: none;
+    background-color: #004b8d;
+    color: white;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #003766;
+}
+
+.pagination span {
+    font-size: 1.2rem;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.close, .close-edit {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close-edit:hover,
+.close:focus, .close-edit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
